@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8">
+<meta name="viewport" content="width=device-width">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: light)">
+<meta name="theme-color" content="#222" media="(prefers-color-scheme: dark)"><meta name="generator" content="Hexo 7.3.0">
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png">
+  <link rel="mask-icon" href="/images/logo.svg" color="#222">
+
+<link rel="stylesheet" href="/css/main.css">
+
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/7.0.0/css/all.min.css" integrity="sha256-VHqXKFhhMxcpubYf9xiWdCiojEbY9NexQ4jh8AxbvcM=" crossorigin="anonymous">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/3.1.1/animate.min.css" integrity="sha256-PR7ttpcvz8qrF57fur/yAx1qXMFJeJFiA6pSzWi0OIE=" crossorigin="anonymous">
+
+<script class="next-config" data-name="main" type="application/json">{"hostname":"example.com","root":"/","images":"/images","scheme":"Muse","darkmode":true,"version":"8.27.0","exturl":false,"sidebar":{"position":"left","width_expanded":320,"width_dual_column":240,"display":"post","padding":18,"offset":12},"hljswrap":true,"codeblock":{"theme":{"light":"default","dark":"stackoverflow-dark"},"prism":{"light":"prism","dark":"prism-dark"},"copy_button":{"enable":false,"style":null},"fold":{"enable":false,"height":500},"language":false},"bookmark":{"enable":false,"color":"#222","save":"auto"},"mediumzoom":false,"lazyload":false,"pangu":false,"comments":{"style":"tabs","active":null,"storage":true,"lazyload":false,"nav":null},"stickytabs":false,"motion":{"enable":true,"async":false,"duration":200,"transition":{"menu_item":"fadeInDown","post_block":"fadeIn","post_header":"fadeInDown","post_body":"fadeInDown","coll_header":"fadeInLeft","sidebar":"fadeInUp"}},"i18n":{"placeholder":"搜索...","empty":"没有找到任何搜索结果：${query}","hits_time":"找到 ${hits} 个搜索结果（用时 ${time} 毫秒）","hits":"找到 ${hits} 个搜索结果"}}</script><script src="/js/config.js" defer></script>
+
+    <meta name="description" content="引言First in Human (FIH) 试验，即首次人体试验，是药物研发过程中一个至关重要的里程碑。它标志着新药从实验室走向临床应用的开始，也是整个药物开发过程中风险最高的阶段之一。如何准确预测 FIH 试验的起始剂量和预期效果，一直是药物研发领域面临的重大挑战。 什么是 First in Human 试验？FIH 试验是指新药在完成充分的临床前研究后，首次在健康志愿者或患者身上进行的临床试">
+<meta property="og:type" content="article">
+<meta property="og:title" content="First in Human 预测：从临床前到临床的跨越">
+<meta property="og:url" content="http://example.com/2026/03/09/FIH%20prediction/index.html">
+<meta property="og:site_name" content="YaxinGo&#39;s Blog">
+<meta property="og:description" content="引言First in Human (FIH) 试验，即首次人体试验，是药物研发过程中一个至关重要的里程碑。它标志着新药从实验室走向临床应用的开始，也是整个药物开发过程中风险最高的阶段之一。如何准确预测 FIH 试验的起始剂量和预期效果，一直是药物研发领域面临的重大挑战。 什么是 First in Human 试验？FIH 试验是指新药在完成充分的临床前研究后，首次在健康志愿者或患者身上进行的临床试">
+<meta property="og:locale" content="zh_CN">
+<meta property="article:published_time" content="2026-03-09T06:30:00.000Z">
+<meta property="article:modified_time" content="2026-03-09T06:14:27.484Z">
+<meta property="article:author" content="YaxinGu">
+<meta property="article:tag" content="药物研发">
+<meta property="article:tag" content="临床试验">
+<meta property="article:tag" content="建模与模拟">
+<meta property="article:tag" content="转化医学">
+<meta name="twitter:card" content="summary">
+
+
+<link rel="canonical" href="http://example.com/2026/03/09/FIH%20prediction/">
+
+
+<script class="next-config" data-name="page" type="application/json">{"sidebar":"","isHome":false,"isPost":true,"lang":"zh-CN","comments":true,"permalink":"http://example.com/2026/03/09/FIH%20prediction/","path":"2026/03/09/FIH prediction/","title":"First in Human 预测：从临床前到临床的跨越"}</script>
+
+<script class="next-config" data-name="calendar" type="application/json">""</script>
+<title>First in Human 预测：从临床前到临床的跨越 | YaxinGo's Blog</title>
+  
+
+
+
+
+
+
+
+
+  
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/animejs/3.2.1/anime.min.js" integrity="sha256-XL2inqUJaslATFnHdJOi9GfQ60on8Wx1C2H8DYiN1xY=" crossorigin="anonymous" defer></script>
+<script src="/js/utils.js" defer></script><script src="/js/motion.js" defer></script><script src="/js/sidebar.js" defer></script><script src="/js/next-boot.js" defer></script>
+
+  
+
+
+
+
+
+
+  
+
+
+
+
+
+  <noscript>
+    <link rel="stylesheet" href="/css/noscript.css">
+  </noscript>
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" class="use-motion">
+  <div class="headband"></div>
+
+  <main class="main">
+    <div class="column">
+      <header class="header" itemscope itemtype="http://schema.org/WPHeader"><div class="site-brand-container">
+  <div class="site-nav-toggle">
+    <div class="toggle" aria-label="切换导航栏" role="button">
+    </div>
+  </div>
+
+  <div class="site-meta">
+
+    <a href="/" class="brand" rel="start">
+      <i class="logo-line"></i>
+      <p class="site-title">YaxinGo's Blog</p>
+      <i class="logo-line"></i>
+    </a>
+  </div>
+
+  <div class="site-nav-right">
+    <div class="toggle popup-trigger" aria-label="搜索" role="button">
+    </div>
+  </div>
+</div>
+
+
+
+
+
+
+
+</header>
+        
+  
+  <aside class="sidebar">
+
+    <div class="sidebar-inner sidebar-nav-active sidebar-toc-active">
+      <ul class="sidebar-nav">
+        <li class="sidebar-nav-toc">
+          文章目录
+        </li>
+        <li class="sidebar-nav-overview">
+          站点概览
+        </li>
+      </ul>
+
+      <div class="sidebar-panel-container">
+        <!--noindex-->
+        <div class="post-toc-wrap sidebar-panel">
+            <div class="post-toc animated"><ol class="nav"><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%BC%95%E8%A8%80"><span class="nav-number">1.</span> <span class="nav-text">引言</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E4%BB%80%E4%B9%88%E6%98%AF-First-in-Human-%E8%AF%95%E9%AA%8C%EF%BC%9F"><span class="nav-number">2.</span> <span class="nav-text">什么是 First in Human 试验？</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FIH-%E9%A2%84%E6%B5%8B%E7%9A%84%E6%A0%B8%E5%BF%83%E6%8C%91%E6%88%98"><span class="nav-number">3.</span> <span class="nav-text">FIH 预测的核心挑战</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-%E7%A7%8D%E5%B1%9E%E5%B7%AE%E5%BC%82"><span class="nav-number">3.1.</span> <span class="nav-text">1. 种属差异</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-%E9%A2%84%E6%B5%8B%E6%A8%A1%E5%9E%8B%E7%9A%84%E4%B8%8D%E7%A1%AE%E5%AE%9A%E6%80%A7"><span class="nav-number">3.2.</span> <span class="nav-text">2. 预测模型的不确定性</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#FIH-%E9%A2%84%E6%B5%8B%E7%9A%84%E5%85%B3%E9%94%AE%E6%96%B9%E6%B3%95"><span class="nav-number">4.</span> <span class="nav-text">FIH 预测的关键方法</span></a><ol class="nav-child"><li class="nav-item nav-level-3"><a class="nav-link" href="#1-NOAEL-%E6%96%B9%E6%B3%95"><span class="nav-number">4.1.</span> <span class="nav-text">1. NOAEL 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#2-MABEL-%E6%96%B9%E6%B3%95"><span class="nav-number">4.2.</span> <span class="nav-text">2. MABEL 方法</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#3-PBPK-%E5%BB%BA%E6%A8%A1"><span class="nav-number">4.3.</span> <span class="nav-text">3. PBPK 建模</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#4-PK-PD-%E5%BB%BA%E6%A8%A1"><span class="nav-number">4.4.</span> <span class="nav-text">4. PK&#x2F;PD 建模</span></a></li></ol></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%80%E4%BD%B3%E5%AE%9E%E8%B7%B5%E5%BB%BA%E8%AE%AE"><span class="nav-number">5.</span> <span class="nav-text">最佳实践建议</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E6%9C%AA%E6%9D%A5%E5%B1%95%E6%9C%9B"><span class="nav-number">6.</span> <span class="nav-text">未来展望</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E7%BB%93%E8%AF%AD"><span class="nav-number">7.</span> <span class="nav-text">结语</span></a></li><li class="nav-item nav-level-2"><a class="nav-link" href="#%E5%8F%82%E8%80%83%E8%B5%84%E6%96%99"><span class="nav-number">8.</span> <span class="nav-text">参考资料</span></a></li></ol></div>
+        </div>
+        <!--/noindex-->
+
+        <div class="site-overview-wrap sidebar-panel">
+          <div class="site-author animated" itemprop="author" itemscope itemtype="http://schema.org/Person">
+  <p class="site-author-name" itemprop="name">YaxinGu</p>
+  <div class="site-description" itemprop="description">知自在自然自在</div>
+</div>
+<div class="site-state-wrap animated">
+  <nav class="site-state">
+      <div class="site-state-item site-state-posts">
+        <a href="/archives/">
+          <span class="site-state-item-count">2</span>
+          <span class="site-state-item-name">日志</span>
+        </a>
+      </div>
+      <div class="site-state-item site-state-categories">
+        <span class="site-state-item-count">1</span>
+        <span class="site-state-item-name">分类</span>
+      </div>
+      <div class="site-state-item site-state-tags">
+        <span class="site-state-item-count">4</span>
+        <span class="site-state-item-name">标签</span>
+      </div>
+  </nav>
+</div>
+
+        </div>
+      </div>
+    </div>
+
+    
+  </aside>
+
+
+    </div>
+
+    <div class="main-inner post posts-expand">
+
+
+  
+
+
+<div class="post-block">
+  
+  
+
+  <article itemscope itemtype="http://schema.org/Article" class="post-content" lang="zh-CN">
+    <link itemprop="mainEntityOfPage" href="http://example.com/2026/03/09/FIH%20prediction/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="image" content="/images/avatar.gif">
+      <meta itemprop="name" content="YaxinGu">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="YaxinGo's Blog">
+      <meta itemprop="description" content="知自在自然自在">
+    </span>
+
+    <span hidden itemprop="post" itemscope itemtype="http://schema.org/CreativeWork">
+      <meta itemprop="name" content="First in Human 预测：从临床前到临床的跨越 | YaxinGo's Blog">
+      <meta itemprop="description" content="">
+    </span>
+      <header class="post-header">
+        <h1 class="post-title" itemprop="name headline">
+          First in Human 预测：从临床前到临床的跨越
+        </h1>
+
+        <div class="post-meta-container">
+          <div class="post-meta">
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-calendar"></i>
+      </span>
+      <span class="post-meta-item-text">发表于</span>
+      
+
+      <time title="创建时间：2026-03-09 14:30:00 / 修改时间：14:14:27" itemprop="dateCreated datePublished" datetime="2026-03-09T14:30:00+08:00">2026-03-09</time>
+    </span>
+    <span class="post-meta-item">
+      <span class="post-meta-item-icon">
+        <i class="far fa-folder"></i>
+      </span>
+      <span class="post-meta-item-text">分类于</span>
+        <span itemprop="about" itemscope itemtype="http://schema.org/Thing">
+          <a href="/categories/%E7%94%9F%E7%89%A9%E5%88%B6%E8%8D%AF/" itemprop="url" rel="index"><span itemprop="name">生物制药</span></a>
+        </span>
+    </span>
+
+  
+</div>
+
+        </div>
+      </header>
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody"><h2 id="引言"><a href="#引言" class="headerlink" title="引言"></a>引言</h2><p>First in Human (FIH) 试验，即首次人体试验，是药物研发过程中一个至关重要的里程碑。它标志着新药从实验室走向临床应用的开始，也是整个药物开发过程中风险最高的阶段之一。如何准确预测 FIH 试验的起始剂量和预期效果，一直是药物研发领域面临的重大挑战。</p>
+<h2 id="什么是-First-in-Human-试验？"><a href="#什么是-First-in-Human-试验？" class="headerlink" title="什么是 First in Human 试验？"></a>什么是 First in Human 试验？</h2><p>FIH 试验是指新药在完成充分的临床前研究后，首次在健康志愿者或患者身上进行的临床试验。其主要目标是：</p>
+<ul>
+<li><strong>评估安全性</strong>：确定新药在人体内的安全性和耐受性</li>
+<li><strong>表征药代动力学（PK）</strong>：了解药物在人体内的吸收、分布、代谢和排泄过程</li>
+<li><strong>探索药效学（PD）</strong>：初步观察药物对靶点的作用和治疗效果</li>
+<li><strong>确定后续试验剂量</strong>：为 II 期和 III 期临床试验提供剂量选择依据</li>
+</ul>
+<h2 id="FIH-预测的核心挑战"><a href="#FIH-预测的核心挑战" class="headerlink" title="FIH 预测的核心挑战"></a>FIH 预测的核心挑战</h2><h3 id="1-种属差异"><a href="#1-种属差异" class="headerlink" title="1. 种属差异"></a>1. 种属差异</h3><p>不同动物物种之间，以及动物与人类之间的生理、生化和遗传差异，使得从动物数据外推到人类变得复杂。例如：</p>
+<ul>
+<li>药物代谢酶的活性和表达差异</li>
+<li>蛋白结合率的差异</li>
+<li>靶点敏感性的差异</li>
+</ul>
+<h3 id="2-预测模型的不确定性"><a href="#2-预测模型的不确定性" class="headerlink" title="2. 预测模型的不确定性"></a>2. 预测模型的不确定性</h3><p>现有的预测模型（如异速增长模型、PBPK 模型等）都存在一定的不确定性，特别是对于：</p>
+<ul>
+<li>首过效应显著的药物</li>
+<li>转运体介导的药物</li>
+<li>生物技术药物（大分子）</li>
+</ul>
+<h2 id="FIH-预测的关键方法"><a href="#FIH-预测的关键方法" class="headerlink" title="FIH 预测的关键方法"></a>FIH 预测的关键方法</h2><h3 id="1-NOAEL-方法"><a href="#1-NOAEL-方法" class="headerlink" title="1. NOAEL 方法"></a>1. NOAEL 方法</h3><p>传统上，最常用的方法是使用未见不良反应剂量（No Observed Adverse Effect Level, NOAEL）：</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">人体等效剂量 (HED) = 动物NOAEL × (动物体重/人体体重)^(0.33)</span><br></pre></td></tr></table></figure>
+
+<p>然后应用安全因子（通常为 10）来确定 FIH 起始剂量。</p>
+<h3 id="2-MABEL-方法"><a href="#2-MABEL-方法" class="headerlink" title="2. MABEL 方法"></a>2. MABEL 方法</h3><p>对于高风险的生物制品，最小预期生物效应剂量（Minimum Anticipated Biological Effect Level, MABEL）方法更为推荐：</p>
+<ul>
+<li>基于药效学模型预测产生靶点效应的最小剂量</li>
+<li>考虑受体占有率、下游信号激活等指标</li>
+<li>更适合单克隆抗体等生物制剂</li>
+</ul>
+<h3 id="3-PBPK-建模"><a href="#3-PBPK-建模" class="headerlink" title="3. PBPK 建模"></a>3. PBPK 建模</h3><p>生理药代动力学模型能够：</p>
+<ul>
+<li>整合生理、生化和药物属性数据</li>
+<li>预测不同组织和器官中的药物浓度</li>
+<li>考虑特殊人群（如肝肾功能不全患者）的剂量调整</li>
+</ul>
+<h3 id="4-PK-PD-建模"><a href="#4-PK-PD-建模" class="headerlink" title="4. PK&#x2F;PD 建模"></a>4. PK&#x2F;PD 建模</h3><p>药代动力学-药效学模型可以：</p>
+<ul>
+<li>预测剂量-暴露-效应关系</li>
+<li>识别生物标志物与临床终点的关系</li>
+<li>优化给药方案</li>
+</ul>
+<h2 id="最佳实践建议"><a href="#最佳实践建议" class="headerlink" title="最佳实践建议"></a>最佳实践建议</h2><ol>
+<li><p><strong>多策略综合评估</strong>：结合多种预测方法，而非依赖单一方法</p>
+</li>
+<li><p><strong>早期暴露评估</strong>：在临床前阶段尽早进行 PK&#x2F;PD 研究</p>
+</li>
+<li><p><strong>受体药理学研究</strong>：深入了解靶点特异性和跨物种保守性</p>
+</li>
+<li><p><strong>灵活的试验设计</strong>：采用适应性设计，根据实时数据调整剂量</p>
+</li>
+<li><p><strong>监管机构沟通</strong>：在试验前与 FDA、EMA 等机构充分沟通</p>
+</li>
+</ol>
+<h2 id="未来展望"><a href="#未来展望" class="headerlink" title="未来展望"></a>未来展望</h2><p>随着新技术的发展，FIH 预测正变得更加精准：</p>
+<ul>
+<li><strong>器官芯片技术</strong>：提供更接近人体的体外模型</li>
+<li><strong>人工智能&#x2F;机器学习</strong>：从海量数据中识别预测模式</li>
+<li><strong>基因组学应用</strong>：考虑个体基因差异对药物反应的影响</li>
+<li><strong>微剂量试验</strong>：使用亚治疗剂量进行早期 PK 评估</li>
+</ul>
+<h2 id="结语"><a href="#结语" class="headerlink" title="结语"></a>结语</h2><p>First in Human 预测是药物研发中科学与艺术的结合。虽然我们无法完全消除这一阶段的不确定性，但通过合理运用现有的预测工具和方法，可以最大限度地降低风险，提高成功率。随着科学技术的进步，我们有理由相信，FIH 预测将变得更加精准和可靠。</p>
+<hr>
+<h2 id="参考资料"><a href="#参考资料" class="headerlink" title="参考资料"></a>参考资料</h2><ol>
+<li>FDA Guidance for Industry: Estimating the Maximum Safe Starting Dose in Initial Clinical Trials for Therapeutics in Adult Healthy Volunteers (2005)</li>
+<li>EMA Guideline on strategies to identify and mitigate risks for first-in-human clinical trials with investigational medicinal products (2017)</li>
+<li>guidance from the International Council for Harmonisation (ICH)</li>
+</ol>
+<blockquote>
+<p>本文仅用于学术交流，不构成医疗建议。实际药物开发请遵循相关法规和指南。</p>
+</blockquote>
+
+    </div>
+
+    
+    
+    
+
+    <footer class="post-footer">
+          <div class="post-tags">
+              <a href="/tags/%E8%8D%AF%E7%89%A9%E7%A0%94%E5%8F%91/" rel="tag"># 药物研发</a>
+              <a href="/tags/%E4%B8%B4%E5%BA%8A%E8%AF%95%E9%AA%8C/" rel="tag"># 临床试验</a>
+              <a href="/tags/%E5%BB%BA%E6%A8%A1%E4%B8%8E%E6%A8%A1%E6%8B%9F/" rel="tag"># 建模与模拟</a>
+              <a href="/tags/%E8%BD%AC%E5%8C%96%E5%8C%BB%E5%AD%A6/" rel="tag"># 转化医学</a>
+          </div>
+
+        
+
+          <div class="post-nav">
+            <div class="post-nav-item">
+                <a href="/2026/03/09/hello-world/" rel="prev" title="Hello World">
+                  <i class="fa fa-angle-left"></i> Hello World
+                </a>
+            </div>
+            <div class="post-nav-item">
+            </div>
+          </div>
+    </footer>
+  </article>
+</div>
+
+
+
+
+
+
+</div>
+  </main>
+
+  <footer class="footer">
+    <div class="footer-inner">
+
+  <div class="copyright">
+    &copy; 
+    <span itemprop="copyrightYear">2026</span>
+    <span class="with-love">
+      <i class="fa fa-heart"></i>
+    </span>
+    <span class="author" itemprop="copyrightHolder">YaxinGu</span>
+  </div>
+  <div class="powered-by">由 <a href="https://hexo.io/" rel="noopener" target="_blank">Hexo</a> & <a href="https://theme-next.js.org/muse/" rel="noopener" target="_blank">NexT.Muse</a> 强力驱动
+  </div>
+
+    </div>
+  </footer>
+
+  
+  <div class="toggle sidebar-toggle" role="button">
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+    <span class="toggle-line"></span>
+  </div>
+  <div class="sidebar-dimmer"></div>
+  <div class="back-to-top" role="button" aria-label="返回顶部">
+    <i class="fa fa-arrow-up fa-lg"></i>
+    <span>0%</span>
+  </div>
+
+<noscript>
+  <div class="noscript-warning">Theme NexT works best with JavaScript enabled</div>
+</noscript>
+
+</body>
+</html>

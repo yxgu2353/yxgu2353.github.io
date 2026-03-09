@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="utf-8"?>
+<search>
+  <entry>
+    <title>Hello World</title>
+    <url>/2026/03/09/hello-world/</url>
+    <content><![CDATA[Welcome to Hexo! This is your very first post. Check documentation for more info. If you get any problems when using Hexo, you can find the answer in troubleshooting or you can ask me on GitHub.
+Quick StartCreate a new post$ hexo new &quot;My New Post&quot;
+
+More info: Writing
+Run server$ hexo server
+
+More info: Server
+Generate static files$ hexo generate
+
+More info: Generating
+Deploy to remote sites$ hexo deploy
+
+More info: Deployment
+]]></content>
+  </entry>
+  <entry>
+    <title>First in Human 预测：从临床前到临床的跨越</title>
+    <url>/2026/03/09/FIH%20prediction/</url>
+    <content><![CDATA[引言First in Human (FIH) 试验，即首次人体试验，是药物研发过程中一个至关重要的里程碑。它标志着新药从实验室走向临床应用的开始，也是整个药物开发过程中风险最高的阶段之一。如何准确预测 FIH 试验的起始剂量和预期效果，一直是药物研发领域面临的重大挑战。
+什么是 First in Human 试验？FIH 试验是指新药在完成充分的临床前研究后，首次在健康志愿者或患者身上进行的临床试验。其主要目标是：
+
+评估安全性：确定新药在人体内的安全性和耐受性
+表征药代动力学（PK）：了解药物在人体内的吸收、分布、代谢和排泄过程
+探索药效学（PD）：初步观察药物对靶点的作用和治疗效果
+确定后续试验剂量：为 II 期和 III 期临床试验提供剂量选择依据
+
+FIH 预测的核心挑战1. 种属差异不同动物物种之间，以及动物与人类之间的生理、生化和遗传差异，使得从动物数据外推到人类变得复杂。例如：
+
+药物代谢酶的活性和表达差异
+蛋白结合率的差异
+靶点敏感性的差异
+
+2. 预测模型的不确定性现有的预测模型（如异速增长模型、PBPK 模型等）都存在一定的不确定性，特别是对于：
+
+首过效应显著的药物
+转运体介导的药物
+生物技术药物（大分子）
+
+FIH 预测的关键方法1. NOAEL 方法传统上，最常用的方法是使用未见不良反应剂量（No Observed Adverse Effect Level, NOAEL）：
+人体等效剂量 (HED) = 动物NOAEL × (动物体重/人体体重)^(0.33)
+
+然后应用安全因子（通常为 10）来确定 FIH 起始剂量。
+2. MABEL 方法对于高风险的生物制品，最小预期生物效应剂量（Minimum Anticipated Biological Effect Level, MABEL）方法更为推荐：
+
+基于药效学模型预测产生靶点效应的最小剂量
+考虑受体占有率、下游信号激活等指标
+更适合单克隆抗体等生物制剂
+
+3. PBPK 建模生理药代动力学模型能够：
+
+整合生理、生化和药物属性数据
+预测不同组织和器官中的药物浓度
+考虑特殊人群（如肝肾功能不全患者）的剂量调整
+
+4. PK&#x2F;PD 建模药代动力学-药效学模型可以：
+
+预测剂量-暴露-效应关系
+识别生物标志物与临床终点的关系
+优化给药方案
+
+最佳实践建议
+多策略综合评估：结合多种预测方法，而非依赖单一方法
+
+早期暴露评估：在临床前阶段尽早进行 PK&#x2F;PD 研究
+
+受体药理学研究：深入了解靶点特异性和跨物种保守性
+
+灵活的试验设计：采用适应性设计，根据实时数据调整剂量
+
+监管机构沟通：在试验前与 FDA、EMA 等机构充分沟通
+
+
+未来展望随着新技术的发展，FIH 预测正变得更加精准：
+
+器官芯片技术：提供更接近人体的体外模型
+人工智能&#x2F;机器学习：从海量数据中识别预测模式
+基因组学应用：考虑个体基因差异对药物反应的影响
+微剂量试验：使用亚治疗剂量进行早期 PK 评估
+
+结语First in Human 预测是药物研发中科学与艺术的结合。虽然我们无法完全消除这一阶段的不确定性，但通过合理运用现有的预测工具和方法，可以最大限度地降低风险，提高成功率。随着科学技术的进步，我们有理由相信，FIH 预测将变得更加精准和可靠。
+
+参考资料
+FDA Guidance for Industry: Estimating the Maximum Safe Starting Dose in Initial Clinical Trials for Therapeutics in Adult Healthy Volunteers (2005)
+EMA Guideline on strategies to identify and mitigate risks for first-in-human clinical trials with investigational medicinal products (2017)
+guidance from the International Council for Harmonisation (ICH)
+
+
+本文仅用于学术交流，不构成医疗建议。实际药物开发请遵循相关法规和指南。
+
+]]></content>
+      <categories>
+        <category>生物制药</category>
+      </categories>
+      <tags>
+        <tag>药物研发</tag>
+        <tag>临床试验</tag>
+        <tag>建模与模拟</tag>
+        <tag>转化医学</tag>
+      </tags>
+  </entry>
+</search>
